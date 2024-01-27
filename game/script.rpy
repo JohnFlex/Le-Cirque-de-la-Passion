@@ -1,15 +1,8 @@
-﻿# Vous pouvez placer le script de votre jeu dans ce fichier.
-
-# Déclarez sous cette ligne les images, avec l'instruction 'image'
-# ex: image eileen heureuse = "eileen_heureuse.png"
-
-# Déclarez les personnages utilisés dans le jeu.
+﻿
 define bol = Character('Bolb le blob', image="bolb")
-define j = Character('Joueur', color="#c8ffc8")
 define fel = Character('Felix Circoos', image="felix")
-#Attirance envers la personne sur la route actuelle
 define att = 0
-
+define j = Character("[name]")
 
 #    menu:
 #       "":
@@ -21,12 +14,21 @@ define att = 0
 
 
 
-
-# Le jeu commence ici
 label start:
     scene bg cirque with dissolve
     show felix with moveinbottom
-    fel "Bonjour à toi ! Je te présente Bolb notre Blobissime clown !"
+    fel "Bonjour à toi ! "
+    extend "... Euuh..."
+    extend "Comment tu t'appeles encore ?"  
+    python:
+        name = renpy.input("", length=32)
+        name = name.strip()
+
+        if not name:
+            name = "Pat Smith"
+
+
+    fel "[name] ! Désolé, je n'avais pas ton CV avec ! Je te présente Bolb notre Blobissime clown !"
     show felix:
         xalign 0.17
         yalign 1.0
