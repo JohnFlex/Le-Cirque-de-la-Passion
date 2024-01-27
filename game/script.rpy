@@ -1,8 +1,9 @@
-﻿
+
 define bol = Character('Bolb le blob', image="bolb")
 define fel = Character('Felix Circoos', image="felix")
 define att = 0
 define j = Character("[name]")
+default app = 0
 
 #    menu:
 #       "":
@@ -15,6 +16,9 @@ define j = Character("[name]")
 
 
 label start:
+    #$ musiclist = renpy.random.shuffle(["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"])
+    play music ["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"] fadein 1.0 fadeout 1.0
+    $app = 1
     scene bg cirque with dissolve
     show felix with moveinbottom
     fel "Bonjour à toi ! "

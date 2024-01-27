@@ -1,26 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 27, in script
-    python:
-  File "game/script.rpy", line 29, in <module>
-    povname = povname.strip()
-NameError: name 'povname' is not defined
+  File "game/script.rpy", line 20, in script
+    play music renpy.random.shuffle("audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav") fadein 1.0 fadeout 1.0
+  File "renpy/common/000statements.rpy", line 123, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "game/script.rpy", line 20, in <module>
+    play music renpy.random.shuffle("audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav") fadein 1.0 fadeout 1.0
+TypeError: shuffle() takes from 2 to 3 positional arguments but 12 were given
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 27, in script
-    python:
-  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 29, in <module>
-    povname = povname.strip()
-NameError: name 'povname' is not defined
+  File "game/script.rpy", line 20, in script
+    play music renpy.random.shuffle("audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav") fadein 1.0 fadeout 1.0
+  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\ast.py", line 2259, in execute
+    self.call("execute")
+  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 123, in execute_play_music
+    renpy.music.play(_audio_eval(p["file"]),
+  File "renpy/common/000statements.rpy", line 32, in _audio_eval
+    return eval(expr, locals=store.audio.__dict__)
+  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\python.py", line 1153, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\marce\Documents\Renpy\renpy-8.1.1-sdk\renpy\python.py", line 1146, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 20, in <module>
+    play music renpy.random.shuffle("audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav") fadein 1.0 fadeout 1.0
+TypeError: shuffle() takes from 2 to 3 positional arguments but 12 were given
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.1.3.23091805
 Le Cirque de la Passion 1.0
-Sat Jan 27 14:43:20 2024
+Sat Jan 27 17:04:46 2024
