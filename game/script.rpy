@@ -4,10 +4,9 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
 # Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eileen', color="#c8ffc8")
-define bol = Character('Bolb le blob', color="#c8ffc8")
+define bol = Character('Bolb le blob', image="bolb")
 define j = Character('Joueur', color="#c8ffc8")
-define fel = Character('Felix Circoos', color="#c8ffc8")
+define fel = Character('Felix Circoos', image="felix")
 #Attirance envers la personne sur la route actuelle
 define att = 0
 
@@ -25,13 +24,27 @@ define att = 0
 
 # Le jeu commence ici
 label start:
+    scene bg cirque with dissolve
+    show felix with moveinbottom
     fel "Bonjour à toi ! Je te présente Bolb notre Blobissime clown !"
+    show felix:
+        xalign 0.17
+        yalign 1.0
+    with move
+
+    show bolb:
+        xalign 0.8
+        yalign 1.0
+    with moveinbottom
+
     bol "..."
     bol "Je vais retourner à ma loge Felix, je dois me préparer"
-    "" "Bolb s'en va sans même me regarder"
+    hide bolb with moveoutbottom
+    #"" "Bolb s'en va sans même me regarder"
     j "Euh... Je lui ai fait quelque chose ?"
     fel "Bolb est un peu difficile à approcher, ça viendra avec le temps. Il est Blobimiste comme il dirait."
     fel "Je vous laisse vous balader un instant, le travail m'appelle !"
+    hide felix with moveoutbottom
 
     menu:
         "Suivre Bolb":
@@ -171,11 +184,7 @@ label SoireeBolbPourBoire:
 
 label TravailFinDeJournée:
     j "Je vais aller travailler maintenant"
-
-
-
-
-
+    jump travailTriste
 
 
 
