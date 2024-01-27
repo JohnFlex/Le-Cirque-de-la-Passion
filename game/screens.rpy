@@ -309,6 +309,8 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
+        textbutton _('Achievements') action ShowMenu("achievement_menu")
+
         textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
