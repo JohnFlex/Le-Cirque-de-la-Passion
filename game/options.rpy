@@ -65,7 +65,7 @@ define config.has_voice = True
 ## diffusé quand le joueur sera sur le menu principal. Ce son se poursuivra dans
 ## le jeu, jusqu’à ce qu'il soit stoppé ou qu’un autre fichier soit joué.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "ambi5.wav"
 
 
 ## Transitions #################################################################
@@ -125,7 +125,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
 ## autre valeur est le nombre de caractères tapés par seconde.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 50
 
 
 ## Le délai d’avancée automatique. Des nombres importants entraînent une longue
@@ -221,3 +221,4 @@ init python:
 ## slash.
 
 # define build.itch_project = "renpytom/test-project"
+define config.top_layers = [ 'achievement_notify' ]
