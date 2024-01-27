@@ -221,3 +221,4 @@ init python:
 ## slash.
 
 # define build.itch_project = "renpytom/test-project"
+define config.top_layers = [ 'achievement_notify' ]

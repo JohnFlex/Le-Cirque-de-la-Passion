@@ -364,10 +364,11 @@ screen main_menu():
 
         hotspot (1370, 259, 258, 108) action Start()
         hotspot (1370, 438, 258, 78) action ShowMenu("load")
-        hotspot (1370, 516, 258, 92) action ShowMenu("preferences")
-        hotspot (1370, 608, 258, 89) action ShowMenu("about")
-        hotspot (1370, 697, 258, 94) action ShowMenu("help")
-        hotspot (1370, 791, 258, 86) action Quit(confirm=False)
+        hotspot (1370, 516, 258, 78) action ShowMenu("achievement_menu")
+        hotspot (1370, 608, 258, 92) action ShowMenu("preferences")
+        hotspot (1370, 697, 258, 89) action ShowMenu("about")
+        hotspot (1370, 791, 258, 94) action ShowMenu("help")
+        hotspot (1370, 880, 258, 86) action Quit(confirm=False)
 
         add "gui/disc.png" xpos 30 ypos -130 at disc_rotate
         add "gui/title.png" xpos 385 ypos 219

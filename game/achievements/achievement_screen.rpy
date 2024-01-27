@@ -146,6 +146,7 @@ screen achievement_notification_catcher():
     zorder 999
 
     if len(achievement_notification_list) > 0 and not renpy.get_screen('achievement_notification'):
+#    if len(achievement_notification_list) > 0:
         timer 0.5 repeat True:
             action [SetVariable('achievement_notification_timer', 3.0), ## Resets the timer.
                     SetVariable('achievement_is_done', False), Show('achievement_notification')]

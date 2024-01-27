@@ -5,15 +5,6 @@ define att = 0
 define j = Character("[name]")
 default app = 0
 
-#    menu:
-#       "":
-#         j ""
-#         jump 
-#       "":
-#           bol ""
-#           jump
-
-
 
 label start:
     scene bg circus with dissolve
@@ -25,7 +16,7 @@ label start:
     extend "... Euuh..."
     extend "Comment tu t'appeles encore ?"  
     python:
-        name = renpy.input("", length=32)
+        name = renpy.input("Entrez votre nom.", length=32)
         name = name.strip()
 
         if not name:
@@ -235,6 +226,7 @@ label MorceauxDeBolb:
             fel "Je t'ai déjà dit de ne pas tenté le Beatbox, pourquoi t'acharnes-tu comme ça ?"
             bol "Je veux juste en faire..." #TODO Bolb sad
             extend " comme tout le monde..."
+            $ Achievement.add(achievement_name['blobsolo'])
            
             #TODO condition soirée
             #jump SoireeBolbPourBoire
@@ -260,6 +252,8 @@ label AiderMorceauxBolb:
     jump SoireeBolbPourBoire
 
 label LaisserMorceauxBolb:
+    
+   
     bol "ma répétition..." #TODO Bolb sad
     extend " Elle est fichue..."
     j "Bolb me regarde mais je ne réagis pas. Il baisse doucement la tête"
