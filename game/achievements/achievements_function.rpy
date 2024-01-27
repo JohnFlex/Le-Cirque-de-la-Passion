@@ -86,7 +86,7 @@ init python:
         ##      'platinum' = The final achievement to be granted once all other achievements have been granted.
 
         #"secret": Achievement(name=_("Shh... It's a secret."), message=_("Discover the secret."), image='gui/trophy_icon.png', priority='hidden'),
-        "achiever": Achievement(name=_("La star"), message=_("Obtenir tous les achievements."), image='gui/trophy_icon.png', priority='platinum'),
+        "wow": Achievement(name=_("La star"), message=_("Obtenir tous les achievements."), image='gui/trophy_icon.png', priority='platinum'),
 
         ## More of this is explained in 'achievement_screen.rpy'.
 
