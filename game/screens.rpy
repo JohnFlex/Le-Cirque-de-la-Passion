@@ -248,8 +248,8 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xpos 900
-            ypos 800
+            xpos 720
+            ypos 815
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
