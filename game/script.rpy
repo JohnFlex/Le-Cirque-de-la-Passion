@@ -10,7 +10,12 @@ label start:
     scene bg circus with dissolve
     play music ["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"] fadein 1.0 fadeout 1.0
     $app = 1
-    show felix with moveinbottom
+
+    show felix:
+        xalign 0.5
+        yalign 1.8
+    with moveinbottom
+
     fel "Bonjour à toi ! "
     extend "... Euuh..."
     extend "Comment tu t'appeles encore ?"  
@@ -24,8 +29,8 @@ label start:
 
     fel "[name] ! Désolé, je n'avais pas ton CV avec ! Je te présente Bolb notre Blobissime clown !"
     show felix:
-        xalign 0.17
-        yalign 1.0
+        yalign 1.8
+        xalign 0.2
     with move
 
     show bolb:
@@ -39,6 +44,7 @@ label start:
 
     show felix:
         xalign 0.5
+        yalign 1.8
     with move
 
     j "Euh..."
@@ -51,9 +57,9 @@ label start:
 
     menu:
         "Suivre Bolb":
-            show bolb with moveinbottom
+            #show bolb with moveinbottom
 
-            j "Attend Bolb !"
+            j "Attends Bolb !"
             jump SuivreBolbDansLoge
 
         "Attendre dehors":
@@ -63,8 +69,11 @@ label start:
 
 
 label SuivreBolbDansLoge:
-    
-    show bolb angry with hpunch
+    scene bg room with dissolve
+    scene bg room with hpunch
+    show bolb angry with moveinbottom
+    play sound "ef_angry.wav"
+    #TODO play sound 
     bol angry "Pourquoi me suis-tu ?" 
     extend " Laisse moi tranquille !"
     j "Mais je..."
@@ -83,15 +92,20 @@ label SuivreBolbDansLoge:
 
 label ForcerLaPorte:
     j "Je prends mon élan et force la porte."
+
+    play sound "ef_door.wav"
+
     bol "*Sploush*"
     j "Qu'est-ce que..."
     extend "???"
     j "Je baisse le regard et trouve Bolb au sol..."
     
     show bolb angry with moveinbottom
-    
+    #TODO play sound 
+
     j "...écraser sous mes pieds !"
     j "Je soulève mes pieds et le corps de Bolb est littéralement tel un chewing-gum !"
+    play sound "ef_angry.wav"
     show bolb angry with hpunch
     bol angry "Tu viens de m'écraboubler !"
     j "Il se reforme difficilement et me lance un regard noir avant de refermer la porte d'un coup sec."
@@ -99,7 +113,10 @@ label ForcerLaPorte:
     j "..."
     fel "[name] !"
 
-    show felix with moveinbottom
+    show felix:
+        xalign 0.5
+        yalign 1.8
+    with moveinbottom
 
     extend " Te voilà !"
     fel "J'ai fini les installations nécessaires pour ton apprentissage. Tu vas pouvoir enfin montrer ton talent !"
@@ -108,6 +125,7 @@ label ForcerLaPorte:
 
 
 label AttendreDehorsChuteBolb:
+    play sound "ef_embarrassed.wav"
     bol embarrassed "Je ne lui ai rien demandé..."
     hide bolb with moveoutbottom
     j "J'entends une porte grincer et me tourne vers la loge de Bolb."
@@ -128,6 +146,7 @@ label AttendreDehorsChuteBolb:
 
 label RigolerDeBolb:
     j "Bolb se retrouve tel une flaque au sol."
+    play sound "ef_angry.wav"
     show bolb angry with hpunch
     bol angry "Cela te fait rire ?" 
     bol angry "Tu penses que rire du malheur des gens est vraiment Bloob ?"
@@ -139,13 +158,20 @@ label RigolerDeBolb:
 label RattraperBolb:
     j "Je tends mes mains pour essayer de le rattraper"
     j "Mais une fois en contact je me souviens de la consistance de son corps..."
+    play sound "ef_special.wav"
     j "Je vois Bolb passer à travers moi sans pouvoir rien faire."
+
+    play sound "ef_door.wav"
+
     bol "Aaahh *Sploush*"
+
     bol "Tu n'as pas beaucoup de neurones tu sais."     
     j "Hahaha comment ça ?"
+    play sound "ef_embarrassed.wav"
     bol embarrassed "Tenter de rattraper un blob c'est une première..."
     bol embarrassed "Mais j'apprécie bloboup le geste."
     bol "..."
+    play sound "ef_shortjoy.wav"
     bol happy "Merci à toi !"
     j "Il n'y a pas de quoi c'est normal."
     j "Je lui offre un sourir et Blob commence à repartir avant d'être interrompue par Felix."
@@ -155,7 +181,13 @@ label RattraperBolb:
         
 
 label FelixArrivePourLeTravail:
-    show felix with moveinbottom
+    scene bg circus with dissolve
+
+    show felix:
+        xalign 0.5
+        yalign 1.8    
+    with moveinbottom
+
     fel "[name] ! J'ai terminé les préparatifs. Suis-moi si tu le veux bien pour te montrer le chapiteau !"
     fel "Donc pour ton premier jour tu vas pouvoir t'entrainer ou bien regarder les répétitions des artistes pour te préparer si tu le veux."
     fel "Hum c'est bien, tout le monde s'entraine comme tu peux le voir !"
@@ -177,7 +209,7 @@ label FelixArrivePourLeTravail:
             play sound "ef_applause.mp3" fadein 1.0
             "" "Durant sa prestation, des morceaux de lui-même s'envole pour se retrouver sur les sièges du public"
             stop sound fadeout 1.0
-            "" "Il s'arrête subitement, gêné et me regarde"
+            j "Il s'arrête subitement, gêné et me regarde"
             jump MorceauxDeBolb
 
 
@@ -194,6 +226,7 @@ label FelixArrivePourLeTravail:
 
 label RepetitionBolb:
     #show bolb with moveinbottom
+    play sound "ef_embarrassed.wav"
     bol embarrassed "Merci à toi, c'est gentil de ta part..."
     bol "Prends les quilles derrière toi, je dois répéter un spectacle de jonglage."
     j "Je m'avance vers les quilles puis me mets en place. Une fois Bolb prêt je lui lance les quilles."
@@ -215,10 +248,15 @@ label RepetitionBolb:
         "Aider Bolb à retirer les quilles":
             j "Hahaha, laisse moi t'aider."
             j "Je m'avance vers Bolb et lui retire toutes les quilles."
+            play sound "ef_embarrassed.wav"
             bol embarrassed "Voici un cadeau pour m'avoir aider..."
             j "Une quille ? Merci je me souviendrais de ton incroyable prestation !"
 
             $ Achievement.add(achievement_name['strike'])
+
+            bol default  "Dit..."
+            extend "Suis moi si tu veux bien."
+            bol embarrassed "J'aimerai passer du temps avec toi."
 
             jump SoireeBolbPourBoire
 
@@ -235,25 +273,26 @@ label MorceauxDeBolb:
 
         "Laisser les morceaux là où ils sont":
             j "Bolb continue de me regarder..."
-            bol "Commme toujours personne n'est là pour m'aider..." #TODO Bolb sad
-            bol "Quel monde triste et inutile." #TODO Bolb sad
+            play sound "ef_shortsad.wav"
+            bol sad "Commme toujours personne n'est là pour m'aider..."
+            bol sad "Quel monde triste et inutile."
             $ Achievement.add(achievement_name['blobsolo'])
 
-            show felix:
-                xalign 0.17
-                yalign 1.0
-            with moveinbottom
-
+            
             show bolb:
                 xalign 0.8
                 yalign 1.0
             with move
 
-            fel "Oh Bolb encore !"
-            show felix with moveinbottom
+            show felix nervous:
+                yalign 1.8
+                xalign 0.2
+            with moveinbottom
+            fel nervous "Oh Bolb encore !"
             j "Je vois Felix s'avancer et récupérer les morceaux éparpillés de partout."
-            fel "Je t'ai déjà dit de ne pas tenté le Beatbox, pourquoi t'acharnes-tu comme ça ?"
-            bol "Je veux juste en faire..." #TODO Bolb sad
+            fel nervous "Je t'ai déjà dit de ne pas tenté le Beatbox, pourquoi t'acharnes-tu comme ça ?"
+            play sound "ef_shortsad.wav"
+            bol sad "Je veux juste en faire..."
             extend " comme tout le monde..."
 
            
@@ -264,27 +303,31 @@ label MorceauxDeBolb:
 
 label AiderMorceauxBolb:
     j "Je me faufile sur les différents sièges pour récupérer tous les morceaux que je vois et m'approche de Bolb pour le lui donner."
-    bol embarrassed "Je te remercie..." #TODO Bolb embarrassed
-    bol happy "Je ne pensais pas qu'une personne pouvait être aussi gentille." #TODO Bolb happy
+    play sound "ef_embarrassed.wav"
+    bol embarrassed "Je te remercie..."
+    bol happy "Je ne pensais pas qu'une personne pouvait être aussi gentille."
     bol "Mais il te reste un morceau ici..."
     extend " Ne bouge pas."
     j "Bolb s'approche de moi et je le sens sur le haut de ma tête."
     j "Qu'est-ce que...?"
     bol "Tu avais un morceau sur la tête."
-    bol embarrassed "Pour m'avoir aider..." #TODO Bolb embarrassed
+    play sound "ef_embarrassed.wav"
+    bol embarrassed "Pour m'avoir aider..."
     extend " Je te le donne."
     bol "Accepte le comme cadeau s'il te plait."
-    bol happy "Je vais maintenant retourner à ma loge." #TODO Bolb happy
+    play sound "ef_shortjoy.wav"
+    bol happy "Je vais maintenant retourner à ma loge."
     j "Je te raccompagne !"
-    bol embarrassed "Merci..." #TODO Bolb embarrassed
+    play sound "ef_shortjoy.wav"
+    bol happy "Merci..."
 
 
     jump SoireeBolbPourBoire
 
 label LaisserMorceauxBolb:
     
-   
-    bol "ma répétition..." #TODO Bolb sad
+    play sound "ef_shortsad.wav"
+    bol sad "ma répétition..." #TODO Bolb sad
     extend " Elle est fichue..."
     j "Bolb me regarde mais je ne réagis pas. Il baisse doucement la tête."
 
@@ -296,6 +339,7 @@ label LaisserMorceauxBolb:
 
 
 label SoireeBolbPourBoire:
+    scene bg room with dissolve
     jump bolbNAPasDeVin
 
 
@@ -306,7 +350,8 @@ label TravailFinDeJournée:
 
 
 label bolbNAPasDeVin:
-    bol "Ah mais en fait je n'ai rien à boire !"
+    show bolb
+    bol default "Ah mais en fait je n'ai rien à boire !"
     menu:
         "Lui proposer d'aller chercher quelque chose":
             jump joueurVaChercherABoire
@@ -319,7 +364,6 @@ label joueurAppelleFelix:
     bol "Je ne suis pas sur que c'est une bonne idée... Mais demande lui s'il a du vin rouge."
     #TODO mini bulle avec Felix ?
     j "Monsieur Circoos ? êtes-vous disposé ?"
-    show felix 
     fel "Que puis-je faire pour vous ?"
     menu:
         "Je voudrais, si vous en avez bien-sur..."
@@ -336,8 +380,9 @@ label felixRemballe:
     fel "Je ne peux pas vous donner ça, la performance de Bolb sera absolument affectée demain !"
     hide felix  
     j "Ne sois pas triste Bolb, je ne savais pas qu'il était si tyranique."
-    bol "Pas grave, ça m'arrive tout le temps. De toute façon, on ne me laisse jamais rien faire." #TODO Bolb sad
-    bol "Si c'est comme ça, je pense que c'est mieux que tu rentres chez toi. J'ai envie de passer la soirée seul. Comme d'habitude." #TODO Bolb sad
+    play sound "ef_shortsad.wav"
+    bol sad "Pas grave, ça m'arrive tout le temps. De toute façon, on ne me laisse jamais rien faire." #TODO Bolb sad
+    bol "Si c'est comme ça, je pense que c'est mieux que tu rentres chez toi. J'ai envie de passer la soirée seul. Comme d'habitude."
     menu:
         "Bonne idée.":
             jump travailTriste
@@ -351,9 +396,10 @@ label joueurVaChercherABoire:
     show bolb with moveinbottom
     bol "C'est merveilleux, c'est parfait, c'est génial ! Mais il ne faut pas que mon patron sache !"
     j "Je ne savais pas qu'il était si tyrannique..."
+    play sound "ef_embarrassed.wav"
     bol embarrassed "En fait, je ne supporte pas bien l'alcool, mais j'adore cette invention humaine. Surtout le vin rouge."
     j "D'accord."
-    #TODO Change scene background to shop
+
     menu:
         "Prendre du vin rouge":
             jump vinRouge
@@ -362,22 +408,29 @@ label joueurVaChercherABoire:
 
 label vodka:
     #TODO Scene Baground loge
+    scene bg room with dissolve
+    play sound "ef_angry.wav"
     show bolb angry with hpunch
     bol angry "De la Vodka ? Il n'y avait que ça ?"
     bol default "Bon..."
     bol "Juste un petit verre alors."
-    show bg black with dissolve 0.5
-    hide bg black with dissolve 0.5
-    bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?" #TODO Bolb sad
+    #show bg black with dissolve 0.5
+    #hide bg black with dissolve 0.5
+    scene bg circus with dissolve
+    play sound "ef_shortjoy.wav"
+    bol happy "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?"
     menu:
         "Garder un silence gênant.":
             bol sad "..."
+            play sound "ef_shortsad.wav"
             bol sad "C'est pas drôle, n'est ce pas ?"
 
         "Lui dire que sa blague n'est pas drôle.":
             bol sad "..."
+            play sound "ef_shortsad.wav"
             bol sad "Mais..."
 
+    play sound "ef_angry.wav"
     show bolb angry with hpunch
     bol angry "Vous êtes tous les mêmes, vous les humains."
     bol angry "Vous servez à rien."
@@ -386,6 +439,7 @@ label vodka:
     bol angry "J'aurais du rester sur ma planète."
     bol angry "Et me faire exploser comme tout le monde."
     bol angry "Et pourtant je suis là."
+    play sound "ef_angry.wav"
     bol angry "A vivre une vie misérable en train de m'étouffer avec vos quilles et vos balles."
     bol angry "Rien ne sert plus à rien."
     menu:
@@ -393,8 +447,9 @@ label vodka:
             j "Et c'est toi qui le dis ! Tu aurais du faire comme tu dis."
             j "Toi et ton espèce de diformes décimés avez eu ce que vous méritez !"
             bol "..."
-            bol "Tu avais l'air pourtant d'être une personne différente."
-            bol "Nous pouvons en rester là. Je vais te demander de partir."
+            play sound "ef_shortsad.wav"
+            bol sad "Tu avais l'air pourtant d'être une personne différente..."
+            bol sad "Nous pouvons en rester là. Je vais te demander de partir."
             j "Je n'ai pas besoin de ta permission, boulette."
             jump travailTriste
         "Pardon Bolb, je ne voulais pas t'offenser.":
@@ -402,14 +457,19 @@ label vodka:
 
 
 label vinRouge:
+    scene bg room with dissolve
+    play sound "ef_shortjoy.wav"
+    show bolb
     bol happy "Uhuhuhuh du vin !"
     bol happy "Du bordeaux en plus ! Quel régal !"
+    play sound "ef_shortjoy.wav"
     bol happy "Que la fête commence !"
     #TODO Dissolve to black
-    scene bg circus with fade
+    scene bg room with fade
     show bolb with dissolve
-    bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?"
-    bol "Oh regarde !"
+    bol happy "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?"
+    play sound "ef_shortjoy.wav"
+    bol happy "Oh regarde !"
     #TODO Dissolve bolb
 
     bol purple "Oulà ! Regarde, mon corps !"
@@ -421,6 +481,7 @@ label vinRouge:
 
 label maisonHeureux:
     bol "..."
+    play sound "ef_embarrassed.wav"
     bol embarrassed "Merci."
     bol embarrassed "Je ne me suis jamais senti accueilli comme ça."
     bol embarrassed "Tu vas presque me redonner le sourire."
@@ -431,8 +492,10 @@ label maisonHeureux:
 
 
 label travailTriste:
-    bol "D'accord"
-    bol "Moi qui pensait qu'on pourrait passer une soirée sympathique malgré tout." #TODO Bolb sad
+    show bolb
+    bol "D'accord."
+    play sound "ef_shortsad.wav"
+    bol sad "Moi qui pensait qu'on pourrait passer une soirée sympathique malgré tout." #TODO Bolb sad
     bol "C'est pas grave, on aura peut-être encore l'occasion de se revoir." #TODO Bolb sad
     bol "Rentre bien."
     scene bg black
