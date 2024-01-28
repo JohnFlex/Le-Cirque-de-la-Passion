@@ -235,14 +235,14 @@ label FelixArrivePourLeTravail:
             show nbg circus lum 
             with dissolve  
 
-            show bolb:
+            show bolb micro:
                 xalign 0.5
-                yalign 0.6
+                yalign 1.8
             with moveinbottom
 
-            bol happy "Lumière..."
+            bol micro "Lumière..."
             play music ["ef_beatbox.wav", "ef_shortjoy.wav"]
-            bol happy "..."
+            bol micro "..."
             hide nbg circus lum with dissolve
             play music ["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"] fadein 1.0 fadeout 1.0
             play sound "ef_applause.mp3" fadein 1.0
@@ -317,14 +317,19 @@ label MorceauxDeBolb:
 
         "Laisser les morceaux là où ils sont":
             j "Bolb continue de me regarder..."
+            hide blob
             play sound "ef_shortsad.wav"
+            show bolb:
+                xalign 0.6
+                yalign 0.6
+
             bol sad "Commme toujours personne n'est là pour m'aider..."
             bol sad "Quel monde triste et inutile."
             $ Achievement.add(achievement_name['blobsolo'])
 
             
             show bolb:
-                xalign 0.6
+                xalign 0.5
                 yalign 0.6
             with move
 
@@ -348,6 +353,14 @@ label MorceauxDeBolb:
 label AiderMorceauxBolb:
     j "Je me faufile sur les différents sièges pour récupérer tous les morceaux que je vois et m'approche de Bolb pour le lui donner."
     play sound "ef_embarrassed.wav"
+
+    hide bolb
+    show bolb:
+        xalign 0.5
+        yalign 0.6
+
+
+    
     bol embarrassed "Je te remercie..."
     bol happy "Je ne pensais pas qu'une personne pouvait être aussi gentille."
     bol "Mais il te reste un morceau ici..."
