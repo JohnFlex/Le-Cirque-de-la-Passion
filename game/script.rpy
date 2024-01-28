@@ -35,7 +35,7 @@ label start:
     with moveinbottom
 
     bol "..."
-    bol "Je vais retourner à ma loge Felix, je dois me préparer pour ma répétition"
+    bol "Je vais retourner à ma loge Felix, je dois me préparer pour ma répétition."
     hide bolb with moveoutbottom
 
     show felix:
@@ -64,11 +64,13 @@ label start:
 
 
 label SuivreBolbDansLoge:
+    
+    show bolb angry with hpunch
     bol angry "Pourquoi me suis-tu ?" 
     extend " Laisse moi tranquille !"
     j "Mais je..."
     hide bolb with moveoutbottom
-    j "Bolb vient de me claquer la porte au nez"
+    j "Bolb vient de me claquer la porte au nez."
 
     menu:
         "Forcer la porte":
@@ -76,12 +78,12 @@ label SuivreBolbDansLoge:
             jump ForcerLaPorte
 
         "Le laisser tranquille":
-            j "Bien je comprends, je te laisse tranquille"
-            j "Je vais essayer de retrouver Felix"
+            j "Bien je comprends, je te laisse tranquille."
+            j "Je vais essayer de retrouver Felix."
             jump FelixArrivePourLeTravail
 
 label ForcerLaPorte:
-    j "Je prends mon élan et force la porte"
+    j "Je prends mon élan et force la porte."
     bol "*Sploush*"
     j "Qu'est-ce que..."
     extend "???"
@@ -91,8 +93,9 @@ label ForcerLaPorte:
     
     j "...écraser sous mes pieds !"
     j "Je soulève mes pieds et le corps de Bolb est littéralement tel un chewing-gum !"
+    show bolb angry with hpunch
     bol angry "Tu viens de m'écraboubler !"
-    j "Il se reforme difficilement et me lance un regard noir avant de refermer la porte d'un coup sec"
+    j "Il se reforme difficilement et me lance un regard noir avant de refermer la porte d'un coup sec."
     hide bolb with moveoutbottom
     j "..."
     fel "[name] !"
@@ -110,10 +113,10 @@ label AttendreDehorsChuteBolb:
     hide bolb with moveoutbottom
     j "J'entends une porte grincer et me tourne vers la loge de Bolb."
     show bolb with moveinbottom
-    j "la porte s'ouvrir doucement et Blob qui sort mais il s'emmêlent les 'pieds'"
+    j "la porte s'ouvrir doucement et Blob qui sort mais il s'emmêlent les 'pieds'."
     j "Attention !"
     bol "AHH..."
-    j "Je vois Bolb prêt à tomber au sol"
+    j "Je vois Bolb prêt à tomber au sol."
 
     menu:
         "Commencer à rire de sa situation":
@@ -125,25 +128,28 @@ label AttendreDehorsChuteBolb:
 
 
 label RigolerDeBolb:
-    j "Bolb se retrouve tel une flaque au sol"
+    j "Bolb se retrouve tel une flaque au sol."
+    show bolb angry with hpunch
     bol angry "Cela te fait rire ?" 
     bol angry "Tu penses que rire du malheur des gens est vraiment Bloob ?"
     bol angry "Dès que Felix t'as présenté j'ai tout de suite sû que tu n'étais pas une bonne personne..."
+    j "Bolb commence à s'éloigner en ronchonnant."
+    hide bolb with moveoutbottom
     jump FelixArrivePourLeTravail
 
 label RattraperBolb:
     j "Je tends mes mains pour essayer de le rattraper"
     j "Mais une fois en contact je me souviens de la consistance de son corps..."
-    j "Je vois Bolb passer à travers moi sans pouvoir rien faire"
+    j "Je vois Bolb passer à travers moi sans pouvoir rien faire."
     bol "Aaahh *Sploush*"
-    bol "Tu n'as pas beaucoup de neurones tu sais"     
+    bol "Tu n'as pas beaucoup de neurones tu sais."     
     j "Hahaha comment ça ?"
     bol embarrassed "Tenter de rattraper un blob c'est une première..."
-    bol embarrassed "Mais j'apprécie bloboup le geste"
+    bol embarrassed "Mais j'apprécie bloboup le geste."
     bol "..."
     bol happy "Merci à toi !"
-    j "Il n'y a pas de quoi c'est normal"
-    j "Je lui offre un sourir et Blob commence à repartit avant d'être interrompue par Felix"
+    j "Il n'y a pas de quoi c'est normal."
+    j "Je lui offre un sourir et Blob commence à repartir avant d'être interrompue par Felix."
     hide bolb with moveoutbottom
 
     jump FelixArrivePourLeTravail
@@ -161,14 +167,14 @@ label FelixArrivePourLeTravail:
         "S'installer sur les sièges devant la scène":
             show bolb with moveinbottom
             bol happy "*Fait du Beatbox*"
-            j "Durant sa prestation, des morceaux de lui-même s'envole pour se retrouver sur les sièges du public"
-            j "Il s'arrête subitement, gêné et me regarde"
+            j "Durant sa prestation, des morceaux de lui-même s'envole pour se retrouver sur les sièges du public."
+            j "Il s'arrête subitement, gêné et me regarde."
             jump MorceauxDeBolb
 
 
         "Monter sur scène avec lui":
             show bolb with moveinbottom
-            j "Laisse moi t'aider à répéter ton spectacle"
+            j "Laisse moi t'aider à répéter ton spectacle."
             jump RepetitionBolb
             
 
@@ -180,8 +186,8 @@ label FelixArrivePourLeTravail:
 label RepetitionBolb:
     #show bolb with moveinbottom
     bol embarrassed "Merci à toi, c'est gentil de ta part..."
-    bol "Prends les quilles derrière toi, je dois répéter un spectacle de jonglage"
-    j "Je m'avance vers les quilles puis me mets en place. Une fois Bolb prêt je lui lance les quilles"
+    bol "Prends les quilles derrière toi, je dois répéter un spectacle de jonglage."
+    j "Je m'avance vers les quilles puis me mets en place. Une fois Bolb prêt je lui lance les quilles."
     j "Les quilles volent dans les airs avant d'attérir par surprise..."
     extend "à l'intérieur de lui !" #dans son ventre
     bol "Oh oh..."
@@ -190,7 +196,7 @@ label RepetitionBolb:
     menu:
         "Laisser les quilles dans Bolb":
             show bolb embarrassed with moveinbottom
-            j "je le vois rougir d'embarras avant de se retourner et d'aller dans sa loge"
+            j "je le vois rougir d'embarras avant de se retourner et d'aller dans sa loge."
             hide bolb with moveoutbottom
             
             #TODO condition soirée
@@ -198,8 +204,8 @@ label RepetitionBolb:
             jump TravailFinDeJournée
 
         "Aider Bolb à retirer les quilles":
-            j "Hahaha, laisse moi t'aider"
-            j "Je m'avance vers Bolb et lui retire toutes les quilles"
+            j "Hahaha, laisse moi t'aider."
+            j "Je m'avance vers Bolb et lui retire toutes les quilles."
             bol embarrassed "Voici un cadeau pour m'avoir aider..."
             j "Une quille ? Merci je me souviendrais de ton incroyable prestation !"
 
@@ -211,17 +217,17 @@ label RepetitionBolb:
 label MorceauxDeBolb:
     menu:
         "Que faire avec les morceaux ?"
-        "Aller les ramasser et aider Bolb":
+        "Aller les ramasser et aider Bolb.":
             j "Attends je vais t'aider !"
             bol "Tu n'es pas obligé tu sais..."
             j "Qu'est ce que tu racontes ?"
-            extend " Bien sûr que si ! Je ne peux pas te laisser dans cet état"
+            extend " Bien sûr que si ! Je ne peux pas te laisser dans cet état."
             jump AiderMorceauxBolb
 
         "Laisser les morceaux là où ils sont":
             j "Bolb continue de me regarder..."
             bol "Commme toujours personne n'est là pour m'aider..." #TODO Bolb sad
-            bol "Quel monde triste et inutile" #TODO Bolb sad
+            bol "Quel monde triste et inutile." #TODO Bolb sad
             $ Achievement.add(achievement_name['blobsolo'])
 
             show felix:
@@ -236,7 +242,7 @@ label MorceauxDeBolb:
 
             fel "Oh Bolb encore !"
             show felix with moveinbottom
-            j "Je vois Felix s'avancer et récupérer les morceaux éparpillés de partout"
+            j "Je vois Felix s'avancer et récupérer les morceaux éparpillés de partout."
             fel "Je t'ai déjà dit de ne pas tenté le Beatbox, pourquoi t'acharnes-tu comme ça ?"
             bol "Je veux juste en faire..." #TODO Bolb sad
             extend " comme tout le monde..."
@@ -248,20 +254,21 @@ label MorceauxDeBolb:
 
 
 label AiderMorceauxBolb:
-    j "Je me faufile sur les différents sièges pour récupérer tous les morceaux que je vois et m'approche de Bolb pour le lui donner"
+    j "Je me faufile sur les différents sièges pour récupérer tous les morceaux que je vois et m'approche de Bolb pour le lui donner."
     bol embarrassed "Je te remercie..." #TODO Bolb embarrassed
-    bol happy "Je ne pensais pas qu'une personne pouvait être aussi gentille" #TODO Bolb happy
+    bol happy "Je ne pensais pas qu'une personne pouvait être aussi gentille." #TODO Bolb happy
     bol "Mais il te reste un morceau ici..."
     extend " Ne bouge pas."
-    j "Bolb s'approche de moi et je le sens sur le haut de ma tête"
+    j "Bolb s'approche de moi et je le sens sur le haut de ma tête."
     j "Qu'est-ce que...?"
-    bol "Tu avais un morceau sur la tête"
+    bol "Tu avais un morceau sur la tête."
     bol embarrassed "Pour m'avoir aider..." #TODO Bolb embarrassed
-    extend " Je te le donne"
-    bol "Accepte le comme cadeau s'il te plait"
-    bol happy "Je vais maintenant retourner à ma loge" #TODO Bolb happy
+    extend " Je te le donne."
+    bol "Accepte le comme cadeau s'il te plait."
+    bol happy "Je vais maintenant retourner à ma loge." #TODO Bolb happy
     j "Je te raccompagne !"
     bol embarrassed "Merci..." #TODO Bolb embarrassed
+
 
     jump SoireeBolbPourBoire
 
@@ -270,7 +277,7 @@ label LaisserMorceauxBolb:
    
     bol "ma répétition..." #TODO Bolb sad
     extend " Elle est fichue..."
-    j "Bolb me regarde mais je ne réagis pas. Il baisse doucement la tête"
+    j "Bolb me regarde mais je ne réagis pas. Il baisse doucement la tête."
 
     #TODO succès
     #TODO condition soirée
@@ -284,7 +291,7 @@ label SoireeBolbPourBoire:
 
 
 label TravailFinDeJournée:
-    j "Je pense que je vais aller travailler maintenant"
+    j "Je pense que je vais aller travailler maintenant."
     jump travailTriste
 
 
@@ -294,7 +301,7 @@ label bolbNAPasDeVin:
     menu:
         "Lui proposer d'aller chercher quelque chose":
             jump joueurVaChercherABoire
-        "Décider d'appeler Felix pour qu'il nous donne quelque chose":
+        "Décider d'appeler Felix pour qu'il nous donne quelque chose.":
             jump joueurAppelleFelix
 
 
@@ -331,10 +338,10 @@ label felixRemballe:
 
 
 label travailTriste:
-    bol "D'accord"
+    bol "D'accord."
     bol "Moi qui pensait qu'on pourrait passer une soirée sympathique malgré tout." #TODO Bolb sad
     bol "C'est pas grave, on aura peut-être encore l'occasion de se revoir." #TODO Bolb sad
-    bol "Rentre bien"
+    bol "Rentre bien."
     jump travailJ1
 
 label travailJ1:
@@ -342,6 +349,7 @@ label travailJ1:
     return
 
 label joueurVaChercherABoire:
+    show bolb with moveinbottom
     bol "C'est merveilleux, c'est parfait, c'est génial ! Mais il ne faut pas que mon patron sache !"
     j "Je ne savais pas qu'il était si tyrannique..."
     bol embarrassed "En fait, je ne supporte pas bien l'alcool, mais j'adore cette invention humaine. Surtout le vin rouge."
@@ -355,20 +363,22 @@ label joueurVaChercherABoire:
 
 label vodka:
     #TODO Scene Baground loge
-    bol "De la Vodka ? Il n'y avait que ça ?"
-    bol "Bon..."
+    show bolb angry with hpunch
+    bol angry "De la Vodka ? Il n'y avait que ça ?"
+    bol default "Bon..."
     bol "Juste un petit verre alors."
     #TODO Dissolve to black
-    bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?" #TODO Bolb sad
+    bol sad "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?" #TODO Bolb sad
     menu:
         "Garder un silence gênant.":
-            bol "..."
-            bol "C'est pas drôle, n'est ce pas ?"
+            bol sad "..."
+            bol sad "C'est pas drôle, n'est ce pas ?"
 
-        "Lui dire que sa blague n'est pas drôle":
-            bol "..." #TODO Bolb sad
-            bol "Mais..."
+        "Lui dire que sa blague n'est pas drôle.":
+            bol sad "..."
+            bol sad "Mais..."
 
+    show bolb angry with hpunch
     bol angry "Vous êtes tous les mêmes, vous les humains."
     bol angry "Vous servez à rien."
     bol angry "Vous êtes répugnants."
@@ -393,17 +403,20 @@ label vodka:
 
 label vinRouge:
     bol happy "Uhuhuhuh du vin !"
-    bol happy "Du bordeaux en plus ! Quel régale !"
+    bol happy "Du bordeaux en plus ! Quel régal !"
     bol happy "Que la fête commence !"
     #TODO Dissolve to black
+    scene bg circus with fade
+    show bolb with dissolve
     bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?"
     bol "Oh regarde !"
     #TODO Dissolve bolb
-    bol "Oulà ! Regarde, mon corps !"
-    bol "Je deviens mauve hihi." 
+
+    bol purple "Oulà ! Regarde, mon corps !"
+    bol purple "Je deviens mauve hihi." 
     $ Achievement.add(achievement_name['wine'])
-    bol "J'en connais un qui ne sera pas content demain..." #TODO Bolb sad
-    bol "Je sais que je ne t'ai pas dis, mais je ne digère pas bien les boissons..."
+    bol purple "J'en connais un qui ne sera pas content demain..."
+    bol purple "Je sais que je ne t'ai pas dis, mais je ne digère pas bien les boissons..."
     jump maisonHeureux
 
 label maisonHeureux:
@@ -416,11 +429,5 @@ label maisonHeureux:
 
 label maisonTriste:
     #TODO 
-
-
-
-
-            
-
 
 
