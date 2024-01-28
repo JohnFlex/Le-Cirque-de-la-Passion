@@ -26,13 +26,15 @@ define gui.show_name = True
 
 ## La version du jeu.
 
-define config.version = "1.0"
+define config.version = "Indev 0.31"
 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
 ## guillemets, et laissez une ligne entre les paragraphes.
 
 define gui.about = _p("""
+
+
 """)
 
 
@@ -222,3 +224,7 @@ init python:
 
 # define build.itch_project = "renpytom/test-project"
 define config.top_layers = [ 'achievement_notify' ]
+
+define config.default_music_volume = 0.5
+define config.default_sfx_volume = 1.0
+define config.default_voice_volume = 1.0

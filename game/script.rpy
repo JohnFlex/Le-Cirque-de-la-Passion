@@ -26,6 +26,12 @@ label start:
         if not name:
             name = "Pat Smith"
 
+        if (name == "Bolb le blob"):
+            Achievement.add(achievement_name['unknown'])
+
+        if not(renpy.exists('audio/4554.mp3')):
+            Achievement.add(achievement_name['4554'])
+
 
     fel "[name] ! Désolé, je n'avais pas ton CV avec ! Je te présente Bolb notre Blobissime clown !"
     show felix:
@@ -91,6 +97,7 @@ label SuivreBolbDansLoge:
             jump FelixArrivePourLeTravail
 
 label ForcerLaPorte:
+    $ Achievement.add(achievement_name['sparta'])
     j "Je prends mon élan et force la porte."
 
     play sound "ef_door.wav"
@@ -499,6 +506,7 @@ label travailTriste:
     bol "C'est pas grave, on aura peut-être encore l'occasion de se revoir." #TODO Bolb sad
     bol "Rentre bien."
     scene bg black
+    $ Achievement.add(achievement_name['lonely'])
     "" "Vous rentrez seul à la maison."
     extend "Votre aventure blobesque touche à sa fin. Une prochaine fois sera plus exitante !"
     return
