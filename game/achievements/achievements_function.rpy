@@ -77,7 +77,13 @@ init python:
         ## -------------------------- EXAMPLES -------------------------- 
         "strike": Achievement(name=_("Strike !"), message=_("Obtenir une quille."), image='gui/trophy_icon.png', priority=None),
         "wine": Achievement(name=_("Red Red Wine"), message=_("Bleu et rouge fait un beau mélange."), image='gui/trophy_icon.png', priority=None),
-        "blobsolo": Achievement(name=_("Mieux vaux être seul que blob accompagné."), message=_("Laisser Bolb dans sa morve."), image='gui/trophy_icon.png', priority=None),
+        "blobsolo": Achievement(name=_("Mieux vaux être seul que blob accompagné"), message=_("Laisser Bolb dans sa morve."), image='gui/trophy_icon.png', priority=None),
+        "sparta": Achievement(name=_("THIS. IS. SPARTA!"), message=_("Du calme, c'est juste une porte."), image='gui/trophy_icon.png', priority=None),
+        "lonely": Achievement(name=_("L'argent ne fait pas le bonheur"), message=_("Vous êtes riches mais seul."), image='gui/trophy_icon.png', priority=None),
+        "4554": Achievement(name=_("4554"), message=_("C'est une perte importante pour le jeu, mais meilleur pour ta santé."), image='gui/trophy_icon.png', priority=None),
+        "unknown": Achievement(name=_("Metamorph"), message=_("On ne peut plus faire la différence."), image='gui/trophy_icon.png', priority=None),
+
+
 
         ## The prio, means that the achievement will be displayed greyed-out before it is granted (or achieved).
         ## I use these terms to describe the types of achievements;
