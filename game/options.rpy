@@ -33,6 +33,18 @@ define config.version = "Indev 0.31"
 ## guillemets, et laissez une ligne entre les paragraphes.
 
 define gui.about = _p("""
+Nouvelle ville, nouveau job, nouveau départ. Vous venez de déposer votre CV au Cirque de la Passion, une petite nouveauté installée récemment dans la ville. Et vous qui rêvez de voyage, pourquoi ne pas tenter sa chance ? Vous venez justement d'être rappelé, mais vous avez entendu de plus en plus de rumeurs infondées sur le lieu : des actions dépravées, des rites bizzares, des activités extraterrestres... Mais au final, ne serait-ce pas... Attirant ?
+
+
+Tout les persos ont été fait par Lola Claus (Chocopink).
+L'UI et du concept Art par Justine Leroy (Soupacape).
+Le background, les icônes de succès et doublage par Laurent Carlin (Queen Kiki).
+Configuration et codage par Marceli Hawrysz (John Flex).
+Et pour finir l'écriture,la logique  et la cohésion par Florine Dobigny (Leym).
+
+
+Musique sous license par Andrey Sitkov.
+Thème Ren'Py Golden disque par Skolaztika, adapté par Justine Leroy (Soupacape).
 
 
 """)

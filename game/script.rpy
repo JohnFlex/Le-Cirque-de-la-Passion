@@ -317,7 +317,7 @@ label MorceauxDeBolb:
 
         "Laisser les morceaux là où ils sont":
             j "Bolb continue de me regarder..."
-            hide blob
+            hide bolb
             play sound "ef_shortsad.wav"
             show bolb:
                 xalign 0.6
@@ -391,7 +391,7 @@ label LaisserMorceauxBolb:
     #TODO succès
     #TODO condition soirée
     jump SoireeBolbPourBoire
-    jump TravailFinDeJournée
+    
 
 
 
