@@ -8,7 +8,6 @@ default app = 0
 
 label start:
     scene bg circus with dissolve
-    #$ musiclist = renpy.random.shuffle(["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"])
     play music ["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"] fadein 1.0 fadeout 1.0
     $app = 1
     show felix with moveinbottom
@@ -159,10 +158,20 @@ label FelixArrivePourLeTravail:
     
     menu:
         "S'installer sur les sièges devant la scène":
+            
+            stop music fadeout 2.0
+            show nbg circus lum 
+            with dissolve  
             show bolb with moveinbottom
-            bol happy "*Fait du Beatbox*"
-            j "Durant sa prestation, des morceaux de lui-même s'envole pour se retrouver sur les sièges du public"
-            j "Il s'arrête subitement, gêné et me regarde"
+            bol happy "Lumière..."
+            play sound "ef_beatbox.wav"
+            bol happy "..."
+            hide nbg circus lum with dissolve
+            play music ["audio/ambi1.wav", "audio/ambi2.wav","audio/ambi3.wav","audio/ambi4.wav","audio/ambi5.wav","audio/ambi6.wav","audio/ambi7.wav","audio/ambi8.wav","audio/ambi9.wav","audio/ambi10.wav","audio/ambi11.wav"] fadein 1.0 fadeout 1.0
+            play sound "ef_applause.mp3" fadein 1.0
+            "" "Durant sa prestation, des morceaux de lui-même s'envole pour se retrouver sur les sièges du public"
+            stop sound fadeout 1.0
+            "" "Il s'arrête subitement, gêné et me regarde"
             jump MorceauxDeBolb
 
 
@@ -324,22 +333,12 @@ label felixRemballe:
     bol "Si c'est comme ça, je pense que c'est mieux que tu rentres chez toi. J'ai envie de passer la soirée seul. Comme d'habitude." #TODO Bolb sad
     menu:
         "Bonne idée.":
-            #TODO
-            pass
+            jump travailTriste
         "Malheureusement je suis encore nécessaire au boulot.":
             jump travailTriste
 
 
-label travailTriste:
-    bol "D'accord"
-    bol "Moi qui pensait qu'on pourrait passer une soirée sympathique malgré tout." #TODO Bolb sad
-    bol "C'est pas grave, on aura peut-être encore l'occasion de se revoir." #TODO Bolb sad
-    bol "Rentre bien"
-    jump travailJ1
 
-label travailJ1:
-    #TODO
-    return
 
 label joueurVaChercherABoire:
     bol "C'est merveilleux, c'est parfait, c'est génial ! Mais il ne faut pas que mon patron sache !"
@@ -358,7 +357,8 @@ label vodka:
     bol "De la Vodka ? Il n'y avait que ça ?"
     bol "Bon..."
     bol "Juste un petit verre alors."
-    #TODO Dissolve to black
+    show bg black with dissolve 0.5
+    hide bg black with dissolve 0.5
     bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?" #TODO Bolb sad
     menu:
         "Garder un silence gênant.":
@@ -386,7 +386,7 @@ label vodka:
             bol "Tu avais l'air pourtant d'être une personne différente."
             bol "Nous pouvons en rester là. Je vais te demander de partir."
             j "Je n'ai pas besoin de ta permission, boulette."
-            jump maisonTriste
+            jump travailTriste
         "Pardon Bolb, je ne voulais pas t'offenser.":
             jump maisonHeureux
 
@@ -395,7 +395,8 @@ label vinRouge:
     bol happy "Uhuhuhuh du vin !"
     bol happy "Du bordeaux en plus ! Quel régale !"
     bol happy "Que la fête commence !"
-    #TODO Dissolve to black
+    show bg black with dissolve 0.5
+    hide bg black with dissolve 0.5
     bol "... Et c'est comme ça que j'ai perdu la cuillère ! La cuillère ! T'imagines ?"
     bol "Oh regarde !"
     #TODO Dissolve bolb
@@ -412,12 +413,20 @@ label maisonHeureux:
     bol embarrassed "Je ne me suis jamais senti accueilli comme ça."
     bol embarrassed "Tu vas presque me redonner le sourire."
     bol happy "Prenons encore un petit quelque chose et finissons notre soirée tranquillement."
-    #TODO jump maison jour 2
-
-label maisonTriste:
-    #TODO 
+    scene bg black
+    return
 
 
+
+label travailTriste:
+    bol "D'accord"
+    bol "Moi qui pensait qu'on pourrait passer une soirée sympathique malgré tout." #TODO Bolb sad
+    bol "C'est pas grave, on aura peut-être encore l'occasion de se revoir." #TODO Bolb sad
+    bol "Rentre bien."
+    scene bg black
+    "" "Vous rentrez seul à la maison."
+    extend "Votre aventure blobesque touche à sa fin. Une prochaine fois sera plus exitante !"
+    return
 
 
             
