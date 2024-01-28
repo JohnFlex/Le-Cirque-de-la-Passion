@@ -26,7 +26,7 @@ define gui.show_name = True
 
 ## La version du jeu.
 
-define config.version = "Indev 0.31"
+define config.version = "Indev_0.31"
 
 
 ## Texte placé sur l'écran "À propos" du jeu. Placez le texte entre triples
